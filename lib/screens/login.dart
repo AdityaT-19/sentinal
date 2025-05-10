@@ -139,6 +139,23 @@ class LoginScreen extends StatelessWidget {
                                             : null,
                               ),
                               const SizedBox(height: 16),
+                              // Age Verification Photo
+                              Obx(() {
+                                if (loginController.ageVerified.value) {
+                                  return Text(
+                                    'Age Verified',
+                                    style: Get.textTheme.bodyMedium?.copyWith(
+                                      color: Colors.green,
+                                    ),
+                                  );
+                                }
+                                return ElevatedButton(
+                                  onPressed: () {
+                                    loginController.verifyAge();
+                                  },
+                                  child: const Text('Verify Age'),
+                                );
+                              }),
                             ],
                           );
                         }

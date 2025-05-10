@@ -54,7 +54,6 @@ class VideoListScreen extends StatelessWidget {
           ),
           children: _videoController.videos.map((video) {
             bool isRestricted = _videoController.isVideoRestricted(video);
-            
             return FutureBuilder<Uint8List?>(
               future: generateThumbnail(video.videoUrl),
               builder: (context, snapshot) {
